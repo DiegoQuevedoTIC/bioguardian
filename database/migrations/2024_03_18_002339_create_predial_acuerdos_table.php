@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('codigo', 16)->unique();
             $table->string('nombre');
+            $table->foreignId('paisaje_id')->constrained('paisajes')->cascadeOnDelete();
             $table->foreignId('linea_id')->constrained('lineas')->cascadeOnDelete();
             $table->foreignId('proyecto_id')->constrained('proyectos')->cascadeOnDelete();
             $table->foreignId('departamento_id')->constrained('departamentos')->cascadeOnDelete();
@@ -27,30 +28,27 @@ return new class extends Migration
             $table->date("fecha_finalizacion")->nullable();;
             $table->foreignId('estado_id')->constrained('estados')->cascadeOnDelete();
             $table->boolean('renovado')->default(false);
-            $table->json('firmante_lider')->nullable();
-            $table->json('firmantes_adicionales')->nullable();
+            $table->string('firmante_lider')->nullable();
+            $table->string('firmantes_adicionales')->nullable();
             $table->decimal('area_predio', 10, 2)->nullable();
             $table->decimal('area_bosque', 10, 2)->nullable();
             $table->decimal('area_productiva', 10, 2)->nullable();
             $table->boolean('planificacion')->default(false);
             $table->boolean('area_protegida')->default(false);
-            $table->json('areas_protegidas_id')->nullable();
-            $table->json('especies_valores_conservacion')->nullable();
+            $table->string('areas_protegidas_id')->nullable();
+            $table->string('especies_valores_conservacion')->nullable();
             $table->boolean('restauracion')->default(false);
             $table->boolean('sistemas_productivos')->default(false);
             $table->boolean('seguridad_alimentaria')->default(false);
             $table->boolean('wash')->default(false);
             $table->boolean('iniciativa_biodiversidad')->default(false);
-            $table->json('especies_sostenibles')->nullable();
+            $table->string('especies_sostenibles')->nullable();
             $table->boolean('asesoria_tecnica')->default(false);
             $table->decimal('area_cadena_valor_sostenible', 10, 2)->nullable();
-            $table->json('cadena_valor')->nullable();
-            $table->float('inversion')->nullable();;
+            $table->string('cadena_valor')->nullable();
+            $table->float('inversion',13, 2)->nullable();
             $table->unsignedInteger('familias_beneficio')->nullable();
             $table->unsignedInteger('personas_beneficio')->nullable();
-
-
-
             $table->timestamps();
         });
     }
