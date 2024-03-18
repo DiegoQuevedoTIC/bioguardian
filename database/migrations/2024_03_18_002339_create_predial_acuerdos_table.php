@@ -22,10 +22,10 @@ return new class extends Migration
             $table->foreignId('municipio_id')->constrained('municipios')->cascadeOnDelete();
             $table->foreignId('vereda_id')->constrained('veredas')->cascadeOnDelete();
             $table->string('id_predio',12)->nullable();
-            $table->string('nombre_firmante_local')->nullable();;
-            $table->string('id_firmante_local',16)->nullable();;
-            $table->date("fecha_inicial")->nullable();;
-            $table->date("fecha_finalizacion")->nullable();;
+            $table->string('nombre_firmante_local')->nullable();
+            $table->string('id_firmante_local',16)->nullable();
+            $table->date("fecha_inicial")->nullable();
+            $table->date("fecha_finalizacion")->nullable();
             $table->foreignId('estado_id')->constrained('estados')->cascadeOnDelete();
             $table->boolean('renovado')->default(false);
             $table->string('firmante_lider')->nullable();
