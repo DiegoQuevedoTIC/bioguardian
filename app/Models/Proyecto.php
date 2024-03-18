@@ -13,4 +13,9 @@ class Proyecto extends Model
     {
         return $this->hasMany(PredialAcuerdo::class);
     }
+
+    public function capaction(): HasMany
+    {
+        return $this->hasMany(Capacitacion::class);
+    }
 }
