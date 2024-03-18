@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
-class Capacitacions extends Model
+class Capacitacion extends Model
 {
     use HasFactory;
 
-    public function paisaje(): BelongsTo
+    public function linea(): BelongsTo
     {
-        return $this->belongsTo(Paisaje::class);
+        return $this->belongsTo(Linea::class);
     }
 
     public function proyecto(): BelongsTo

@@ -14,8 +14,5 @@ class Paisaje extends Model
         return $this->hasMany(PredialAcuerdo::class);
     }
 
-    public function capacitacion(): HasMany
-    {
-        return $this->hasMany(Capacitacion::class);
-    }
+
 }

@@ -107,7 +107,6 @@ class PredialAcuerdoResource extends Resource
                                 ->markAsRequired(false)
                                 ->preload()
                                 ->label('Estado Actual'), 
-
                         Select::make('departamento_id')
                                 ->options(Departamento::query()->pluck('nombre', 'id'))
                                 ->markAsRequired(false)
@@ -140,19 +139,6 @@ class PredialAcuerdoResource extends Resource
                                 ->live()
                                 ->preload()
                                 ->label('Vereda-Corregimiento '),
- /*                        Select::make('vereda_id')
-                                ->options(fn (Get $get): Collection => Vereda::query()
-                                ->where('municipio_id', $get('municipio_id'))
-                                ->pluck('nombre', 'id'))
-                                ->markAsRequired(false)
-                                ->required()
-                                ->preload()
-                                ->columnSpan(2)
-                                ->live()
-                                ->label('Vereda - Corregimiento'), */
-
-
-
                             ]),
 
                             Wizard\Step::make('Caracterizacion del Acuerdo ')

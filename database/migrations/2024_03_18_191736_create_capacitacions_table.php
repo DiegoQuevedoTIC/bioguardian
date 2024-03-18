@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('capacitacions', function (Blueprint $table) {
             $table->id();
-            $table->string('codigo', 3)->unique();
+            $table->string('codigo', 5)->unique();
             $table->string('nombre');
-            $table->decimal('no_talleres', 3)->nullable();
-            $table->decimal('capacitaciones', 3)->nullable();
+            $table->unsignedInteger('no_talleres')->nullable();
+            $table->unsignedInteger('capacitaciones')->nullable();
             $table->date("fecha")->nullable();
             $table->unsignedInteger('total_asistentes')->nullable();
             $table->foreignId('proyecto_id')->constrained('proyectos')->cascadeOnDelete();
             $table->foreignId('linea_id')->constrained('lineas')->cascadeOnDelete();
-            $table->string('soporte_capacitacion'); 
+            $table->string('soporte_capacitacion')->nullable();
             $table->timestamps();
         });
     }
