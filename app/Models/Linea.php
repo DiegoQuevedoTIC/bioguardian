@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Linea extends Model
 {
     use HasFactory;
+
+    public function predialacuerdo(): HasMany
+    {
+        return $this->hasMany(PredialAcuerdo::class);
+    }
 }

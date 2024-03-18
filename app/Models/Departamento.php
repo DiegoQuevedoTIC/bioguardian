@@ -20,4 +20,10 @@ class Departamento extends Model
     {
         return $this->hasMany(Municipio::class);
     }
+
+    public function predialacuerdo(): HasMany
+    {
+        return $this->hasMany(PredialAcuerdo::class);
+    }
+
 }

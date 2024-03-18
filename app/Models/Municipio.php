@@ -20,4 +20,9 @@ class Municipio extends Model
     {
         return $this->hasMany(Vereda::class);
     }
+
+    public function predialacuerdo(): HasMany
+    {
+        return $this->hasMany(PredialAcuerdo::class);
+    }
 }

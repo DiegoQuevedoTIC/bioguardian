@@ -16,4 +16,9 @@ class Vereda extends Model
     {
         return $this->belongsTo(Municipio::class);
     }
+
+    public function predialacuerdo(): HasMany
+    {
+        return $this->hasMany(PredialAcuerdo::class);
+    }
 }
